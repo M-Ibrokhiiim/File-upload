@@ -1,7 +1,7 @@
 <template>
       <main class="flex justify-center">
           <div class="bg-white   h-[50px] relative rounded-4xl  w-[170px] cursor-pointer active:scale-80  transition-all duration-100 " >
-               <input type="file" @change="handleFile"  class="bg-red-400 w-[170px]   z-10  h-[50px] opacity-0 rounded-4xl absolute  cursor-pointer"/>   
+               <input type="file" @change="handleFile"  accept="image/*" class="bg-red-400 w-[170px]   z-10  h-[50px] opacity-0 rounded-4xl absolute  cursor-pointer"/>   
                
                <div class="bg-white h-[50px] flex p-2 cursor-pointer active:scale-80  transition-all duration-100 w-[170px] border-2 border-[blue]  rounded-[100px] justify-around">
                      <Upload/> 
@@ -9,9 +9,8 @@
                </div>
           </div>
 
-          <div  v-if="showContent" class="absolute top-[200px] ">
-               <h1><span class="text-xl">Name:</span>{{ inputValue.name }}</h1>
-               <h1><span class="text-xl">Size:</span> {{ (inputValue.size / 1024).toFixed(2) }} KB</h1>
+          <div  v-if="showContent" class="absolute top-[250px] ">
+               <img :src="pictureURL" class="w-[20vw] h-[400px] border-30 -rotate-12 shadow-2xl shadow-black border-white"/> 
           </div>
       </main>
       
@@ -20,13 +19,20 @@
 import { ref } from 'vue';
 import Upload from '../icons/upload.vue';
 
-const inputValue = ref(null)
-const showContent = ref(false)
+import {inputFileUploadToServer} from '@/composable/inputFileUpload.js'
+
+
+const showContent = ref(false);
+const inputValue = ref(null);
+const  pictureURL = ref(null);
+
 
 const handleFile = (e)=>{
      
-     inputValue.value=e.target.files[0]
-     showContent.value = true
-     console.log(inputValue.value)
+     inputValue.value=e.target.files[0];
+     showContent.value = true;
+     pictureURL.value = URL.createObjectURL(e.target.files[0]);
+     
+     inputFileUploadToServer(inputValue.value)
 }
 </script>
