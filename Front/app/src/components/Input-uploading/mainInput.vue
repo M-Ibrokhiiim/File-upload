@@ -1,7 +1,7 @@
 <template>
       <main class="flex justify-center">
           <div class="bg-white   h-[50px] relative rounded-4xl  w-[170px] cursor-pointer active:scale-80  transition-all duration-100 " >
-               <input type="file" @change="handleFile"  accept="image/*" class="bg-red-400 w-[170px]   z-10  h-[50px] opacity-0 rounded-4xl absolute  cursor-pointer"/>   
+               <input type="file" name="name"  @change="handleFile"    class="bg-red-400 w-[170px]   z-10  h-[50px] opacity-0 rounded-4xl absolute  cursor-pointer"/>   
                
                <div class="bg-white h-[50px] flex p-2 cursor-pointer active:scale-80  transition-all duration-100 w-[170px] border-2 border-[blue]  rounded-[100px] justify-around">
                      <Upload/> 
@@ -9,8 +9,8 @@
                </div>
           </div>
 
-          <div  v-if="showContent" class="absolute top-[250px] ">
-               <img :src="pictureURL" class="w-[20vw] h-[400px] border-30 -rotate-12 shadow-2xl shadow-black border-white"/> 
+          <div  v-if="showContent" class="absolute top-[250px] hover:scale-110 active:scale-90 cursor-pointer  transition-all duration-150 delay-75 ">
+               <img :src="pictureURL" class="w-[25vw] h-[500px] border-30    shadow-2xl shadow-black border-white"/> 
           </div>
       </main>
       

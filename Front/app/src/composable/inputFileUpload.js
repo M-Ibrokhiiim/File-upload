@@ -8,14 +8,12 @@ export async function inputFileUploadToServer(file=null){
     return alert('Please, select a file from you machine...')
  }
 
- formData.append('file',file)
+ formData.append('file',file);
+ formData.append('name','M_Ibrokhiiim');
 
  try{
     const reponse = await fetch('http://localhost:3000/upload/inputFileUploading',{
         method:'POST',
-        headers:{
-            "Content-Type":"multipart/form-data"
-        },
         body:formData
     })
 
