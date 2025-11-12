@@ -16,7 +16,8 @@
     "lint": "run-s lint:*"
   },
   "dependencies": {
-    "vue": "^3.5.22"
+    "vue": "^3.5.22",
+    "vue-router": "^4.6.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.37.0",

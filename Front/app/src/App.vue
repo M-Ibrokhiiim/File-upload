@@ -3,36 +3,23 @@
 </script>
 
 <template>
- <div>
-  <h1 class="text-2xl">Front section of file upload project</h1>
- </div>  
+ <div class="  flex justify-center">
+  <header class="w-[200px]  ">
+    <nav class="flex justify-between  ml-7 w-full   active:text-black">
+      <p class="text-black text-[20px] font-extrabold">
+        <router-link   to="/input">Input</router-link> 
+      </p>
+      <span class="h-2.5 text-[20px]text-black ">|</span>
+      <p class="text-black text-[20px]">
+        <router-link  to="/dragDrop">Drag_Drop</router-link>
+      </p>
+    </nav>
+  </header>
+   </div>  
+   <main class="bg-white  h-[92vh] flex justify-center p-10">
+    <section class="bg-blue-200 rounded-4xl p-6 w-[50%] h-[85vh] ">
+      <router-view></router-view>
+    </section>
+  </main>
+
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
