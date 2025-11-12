@@ -1,3 +1,6 @@
+import { useToast } from "vue-toastification"
+const toast = useToast()
+
 export async function inputFileUploadToServer(file=null){
  const formData = new FormData()
  console.log(file)
@@ -17,13 +20,13 @@ export async function inputFileUploadToServer(file=null){
     })
 
    if(!reponse.ok){
-    alert('Error happened while uploading file...')
+    toast.error('Error happened while uploading file...')
     throw new Error('Error happened while uploading file...')
    }
 
    const data = await reponse.json()
 
-   console.log('Successfully uploaded!')
+   toast.success(data.msg || 'Successfully uploaded!')
  }catch(err){
   console.log(err)
  }
