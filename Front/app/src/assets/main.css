@@ -5,9 +5,7 @@
 #app {
   max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-  background-color: rgba(85, 66, 229, 0.808);
+  padding: 2rem;  
   height: 100vh;
 }
 
