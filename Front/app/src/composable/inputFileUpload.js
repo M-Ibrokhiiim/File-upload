@@ -8,7 +8,7 @@ export async function inputFileUploadToServer(file=null){
  formData.append('file',file)
 
  try{
-    const reponse = await fetch('http//:URL',{
+    const reponse = await fetch('http://localhost:3000/upload/inputFileUploading',{
         method:'POST',
         headers:{
             "Content-Type":"multipart/form-data"
@@ -23,7 +23,7 @@ export async function inputFileUploadToServer(file=null){
 
    const data = await reponse.json()
 
-   console.log(data.msg || 'Successfully uploaded!')
+   console.log('Successfully uploaded!')
  }catch(err){
   console.log(err)
  }
