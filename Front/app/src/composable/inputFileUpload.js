@@ -12,7 +12,7 @@ export async function inputFileUploadToServer(file=null){
  formData.append('name','M_Ibrokhiiim');
  console.log(file)
  try{
-    const response = await fetch('http://localhost:3000/api/upload/input',{
+    const response = await fetch('http://localhost:3000/api/i/inputup',{
         method:'POST',
         body:formData
     })

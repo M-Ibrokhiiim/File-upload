@@ -30,17 +30,17 @@ function receiveDrop(e){
   e.preventDefault();
 
   droppedFile.value = e.dataTransfer.files[0];
+  droppedFileUploader(droppedFile.value);
   pictureURL.value = URL.createObjectURL(droppedFile.value);
   isPic.value = true;
-  droppedFileUploader(droppedFile.value);
 }
 
 
 function receiveChosenFile(e){
   droppedFile.value = e.target.files[0]
+  droppedFileUploader(droppedFile.value)
   pictureURL.value = URL.createObjectURL(droppedFile.value);
   isPic.value = true;
-  droppedFileUploader(droppedFile.value)
 }
 
 

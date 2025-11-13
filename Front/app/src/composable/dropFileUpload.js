@@ -12,7 +12,7 @@ export async function droppedFileUploader(file=null){
     formData.append('file',file)
 
     try{
-        const response = await fetch('http://localhost:3000/api/upload/dropup',{
+        const response = await fetch('http://localhost:3000/api/d/dropup',{
             method:'POST',
             body:formData
         })
