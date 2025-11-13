@@ -20,7 +20,7 @@
 <script setup>
 import { ref } from 'vue';
 import Folder from '../icons/folder.vue';
-import { inputFileUploadToServer } from '@/composable/inputFileUpload';
+import { droppedFileUploader } from '@/composable/dropFileUpload';
 
 const droppedFile = ref(null);
 const pictureURL = ref('');
@@ -32,7 +32,7 @@ function receiveDrop(e){
   droppedFile.value = e.dataTransfer.files[0];
   pictureURL.value = URL.createObjectURL(droppedFile.value);
   isPic.value = true;
-  inputFileUploadToServer(droppedFile.value);
+  droppedFileUploader(droppedFile.value);
 }
 
 
@@ -40,7 +40,7 @@ function receiveChosenFile(e){
   droppedFile.value = e.target.files[0]
   pictureURL.value = URL.createObjectURL(droppedFile.value);
   isPic.value = true;
-  inputFileUploadToServer(droppedFile.value)
+  droppedFileUploader(droppedFile.value)
 }
 
 

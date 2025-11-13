@@ -10,7 +10,7 @@ export async function inputFileUploadToServer(file=null){
 
  formData.append('file',file);
  formData.append('name','M_Ibrokhiiim');
-
+ console.log(file)
  try{
     const response = await fetch('http://localhost:3000/api/upload/input',{
         method:'POST',
@@ -18,7 +18,7 @@ export async function inputFileUploadToServer(file=null){
     })
 
    if(!response.ok){
-    toast.caller('Error happened while uploading file...')
+    toast.warning('Error happened while uploading file...')
     throw new Error('Error happened while uploading file...')
    }
 
